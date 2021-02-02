@@ -22,7 +22,7 @@ namespace PokerHands.Tests
             new Player("player2", player2Cards.ToCards())
             };
 
-            var winner = players.FindPlayerWithHighestCard();
+            var winner = players.SelectPlayerWithHighCard();
 
             if (expectedWinner != null)
             {

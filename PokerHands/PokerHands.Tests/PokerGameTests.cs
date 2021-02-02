@@ -19,7 +19,7 @@ namespace PokerHands.Tests
                 new Player("player2", "3S 4C".ToCards())
             };
             var game = new PokerGame(players)
-                .FindWinner(PlayerWithHighestCard);
+                .FindWinner(WithHighCard);
 
             game.Winner.Should().NotBeNull();
             game.WinningHand.Should().Be(PokerHand.HighCard);
@@ -37,7 +37,7 @@ namespace PokerHands.Tests
                 new Player("player2", player2Cards.ToCards())
             };
             var game = new PokerGame(players)
-                .FindWinner(PlayerWithHighestCard);
+                .FindWinner(WithHighCard);
 
             game.Winner.Should().NotBeNull();
             game.WinningHand.Should().Be(PokerHand.HighCard);
@@ -53,7 +53,7 @@ namespace PokerHands.Tests
                 new Player("player2", "2S AD KH".ToCards())
             };
             var game = new PokerGame(players)
-                .FindWinner(PlayerWithHighestCard);
+                .FindWinner(WithHighCard);
 
             game.Winner.Should().BeNull();
         }
@@ -70,7 +70,7 @@ namespace PokerHands.Tests
                 new Player("player2", player2Cards.ToCards())
             };
             var game = new PokerGame(players)
-                .FindWinner(PlayerWithAPair);
+                .FindWinner(WithAPair);
 
             game.Winner.Should().NotBeNull();
             game.Winner.Name.Should().Be(expectedWinner);
@@ -85,7 +85,7 @@ namespace PokerHands.Tests
                 new Player("player2", "2S 7H AS".ToCards())
             };
             var game = new PokerGame(players)
-                .FindWinner(PlayerWithAPair);
+                .FindWinner(WithAPair);
 
             game.Winner.Should().BeNull();
         }
@@ -99,7 +99,7 @@ namespace PokerHands.Tests
                 new Player("player2", "5S AD AS".ToCards())
             };
             var game = new PokerGame(players)
-                .FindWinner(PlayerWithAPair);
+                .FindWinner(WithAPair);
 
             game.Winner.Should().BeNull();
         }
@@ -119,7 +119,7 @@ namespace PokerHands.Tests
                 new Player("player2", player2Cards.ToCards())
             };
             var game = new PokerGame(players)
-                .FindWinner(PlayerWithTwoPairs);
+                .FindWinner(WithTwoPairs);
 
             if (expectedWinner == null)
             {
@@ -145,7 +145,7 @@ namespace PokerHands.Tests
                 new Player("player2", player2Cards.ToCards())
             };
             var game = new PokerGame(players)
-                .FindWinner(PlayerWithThreeOfAKind);
+                .FindWinner(WithThreeOfAKind);
 
             if (expectedWinner == null)
             {
@@ -170,7 +170,7 @@ namespace PokerHands.Tests
                 new Player("player2", player2Cards.ToCards())
             };
             var game = new PokerGame(players)
-                .FindWinner(PlayerWithAFlush);
+                .FindWinner(WithAFlush);
 
             if (expectedWinner == null)
             {
@@ -194,7 +194,7 @@ namespace PokerHands.Tests
                 new Player("player2", player2Cards.ToCards())
             };
             var game = new PokerGame(players)
-                .FindWinner(PlayerWithAFullHouse);
+                .FindWinner(WithAFullHouse);
 
             if (expectedWinner == null)
             {
@@ -218,7 +218,7 @@ namespace PokerHands.Tests
                 new Player("player2", player2Cards.ToCards())
             };
             var game = new PokerGame(players)
-                .FindWinner(PlayerWithFourOfAKind);
+                .FindWinner(WithFourOfAKind);
 
             if (expectedWinner == null)
             {
@@ -251,7 +251,7 @@ namespace PokerHands.Tests
                 new Player("player2", player2Cards.ToCards())
             };
             var game = new PokerGame(players)
-                .FindWinner(PlayerWithStraightFlush);
+                .FindWinner(WithStraightFlush);
 
             if (expectedWinner == null)
             {
@@ -280,15 +280,15 @@ namespace PokerHands.Tests
                 new Player("player2", player2Cards.ToCards())
             };
             var game = new PokerGame(players)
-                .FindWinner(PlayerWithStraightFlush)
-                .FindWinner(PlayerWithFourOfAKind)
-                .FindWinner(PlayerWithAFullHouse)
-                .FindWinner(PlayerWithAFlush)
-                .FindWinner(PlayerWithStraight)
-                .FindWinner(PlayerWithThreeOfAKind)
-                .FindWinner(PlayerWithTwoPairs)
-                .FindWinner(PlayerWithAPair)
-                .FindWinner(PlayerWithHighestCard);
+                .FindWinner(WithStraightFlush)
+                .FindWinner(WithFourOfAKind)
+                .FindWinner(WithAFullHouse)
+                .FindWinner(WithAFlush)
+                .FindWinner(WithStraight)
+                .FindWinner(WithThreeOfAKind)
+                .FindWinner(WithTwoPairs)
+                .FindWinner(WithAPair)
+                .FindWinner(WithHighCard);
 
             if (expectedWinner != null)
             {
