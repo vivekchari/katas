@@ -1,0 +1,2 @@
+# katas
+.NET core Katas
