@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using static PlayerExtensions;
 
 public class PokerGame
 {
@@ -23,4 +22,16 @@ public class PokerGame
         this.WinningHand = winningHand;
         return this;
     }
+}
+
+public enum PokerHand
+{
+    HighCard,
+    TwoOfAKind,
+    TwoPair,
+    ThreeOfAKind,
+    Flush,
+    FullHouse,
+    FourOfAKind,
+    StraightFlush
 }

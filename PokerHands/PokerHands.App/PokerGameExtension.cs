@@ -11,6 +11,4 @@ public static class PokerGameExtension
         if (result.Winnner != null) game.SetWinner(result.Winnner, result.WinningHand);
         return game;
     }
-
-
 }

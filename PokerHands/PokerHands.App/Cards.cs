@@ -2,14 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-public enum Suite
-{
-    Hearts,
-    Diamond,
-    Spade,
-    Club
-}
-
 public record Card(int value, Suite suite)
 {
     public virtual bool Equals(Card card) => card?.value == this.value;
@@ -21,7 +13,7 @@ public record Card(int value, Suite suite)
     }
 }
 
-public static class CardExtension
+public static class CardExtensions
 {
     private static Suite ToSuite(string c) => c switch
     {
@@ -45,11 +37,17 @@ public static class CardExtension
         _ => throw new Exception($"Invalid card value: {c}")
     };
 
-    public static IEnumerable<Card> ToCards(this string input)
-    {
-        return input
+    public static IEnumerable<Card> ToCards(this string input) =>
+        input
             .Split(" ")
             .Select(c => c.Trim())
             .Select(c => new Card(ToValue(c.ElementAt(0)), ToSuite(c.ElementAt(1).ToString())));
-    }
+}
+
+public enum Suite
+{
+    Hearts,
+    Diamond,
+    Spade,
+    Club
 }
